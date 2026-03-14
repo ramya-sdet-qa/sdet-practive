@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package com.sdet.Learning;
+
+/**
+ * 
+ */
+public class ExtractNumbers {
+
+		public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			String inputStr = "123price450";
+			String number = "";
+			int sum=0;
+			
+			for (int i=0; i<inputStr.length(); i++)
+			{
+				if(Character.isDigit(inputStr.charAt(i)))
+				{
+				 	number+= inputStr.charAt(i);
+				}
+				
+				else
+					if(!number.isEmpty())
+					{
+						sum = sum + Integer.parseInt(number);
+						number="";
+					}
+			}
+			
+			if(!number.isEmpty())
+			{
+				sum = sum + Integer.parseInt(number);
+				//System.out.println(sum);
+			}
+			System.out.println("sum : " + sum);
+	}
+
+}
